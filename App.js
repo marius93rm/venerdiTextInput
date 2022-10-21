@@ -1,11 +1,16 @@
 import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View, TextInput, Text } from 'react-native';
+import { StyleSheet, View, TextInput, Text, Image } from 'react-native';
+
 
 export default function App() {
   const [text, setText] = useState('');
   return (
     <View style={styles.container}>
+      <Image
+        style={styles.image}
+        source={ require('./assets/icon.png') } 
+      />
       <TextInput
         style={{ height: 40, borderColor: 'gray', borderWidth: 1, padding: 5, width: 200 }}
         placeholder="You can type in me"
@@ -32,4 +37,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  image: {
+    width: 200,
+    height: 200
+  }
 });
