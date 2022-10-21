@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View, TextInput, Text, Image } from 'react-native';
+import { StyleSheet, View, TextInput, Text, Image, TouchableOpacity } from 'react-native';
 
 
 export default function App() {
   const [text, setText] = useState('');
+  const [count, setCount] = useState(0);
+
   return (
     <View style={styles.container}>
       <Image
@@ -25,6 +27,9 @@ export default function App() {
       <Text style={{ padding: 10, fontSize: 42 }}>
         {text}
       </Text>
+
+      <TouchableOpacity
+        style={styles.button}
       <StatusBar style="auto" />
     </View>
   );
@@ -40,5 +45,12 @@ const styles = StyleSheet.create({
   image: {
     width: 200,
     height: 200
+  },
+  button: {
+    padding: 40,
+    borderRadius: 4,
+    borderWidth: 0.5,
+    borderColor: '#d6d7da',
+    backgroundColor: 'blue'
   }
 });
